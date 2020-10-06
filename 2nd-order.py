@@ -83,8 +83,8 @@ for filename in filenames:
     plt.plot(t, f(t,thetas[0], thetas[1], thetas[2]), '-r', filename2)
     plt.title(filename2)
    
-    plt.ylim(-12,12)
-    plt.xlim(-2,2)
+    plt.ylim(-16,16)
+    plt.xlim(-16,16)
     
     plt.savefig(filename2 + ".png")
     plt.close()

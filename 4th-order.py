@@ -79,7 +79,7 @@ for filename in filenames:
     plt.title(filename2)
    
     plt.ylim(-16,16)
-    plt.xlim(-2,2)
+    plt.xlim(-16,16)
     
     plt.savefig(filename2 + ".png")
     plt.close()

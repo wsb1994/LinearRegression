@@ -41,7 +41,7 @@ for filename in filenames:
     #y4 = x**4 + x**3 + x**2 + x**0
     #y5 = x**7 + x**6 + x**5 + x**4 + x**3 + x**2 + x**1 + x**0
 
-    myData = data.data("synthetic-3.csv")
+    myData = data.data(filename)
     myData.cast_to_float()
 
     myData = myData.data
@@ -64,16 +64,22 @@ for filename in filenames:
     plt.plot(xes,yes, 'ro')
 
 
-    Xrange = np.linspace(-100,100,1)
-    equation = thetas[0] + thetas[1]*Xrange**1
-    filename2= '1st order-'+ filename
-    plt.plot(Xrange, equation, '-r', label=filename2)
+
+    equation = thetas[0] + thetas[1]*x 
+    xes = []
+
+    def f(t, t1, t2):
+        return t1 + t2*t 
+    t = np.arange(-100,100,1)
+    ft = f(t, thetas[0], thetas[1])
+    filename2 = '1st order-' + filename 
+    plt.plot(t, f(t,thetas[0], thetas[1]), '-r', filename2)
     plt.title(filename2)
-    
+   
     plt.ylim(-16,16)
-    plt.xlim(-2,2)
+    plt.xlim(-16,16)
     
-    plt.savefig(filename2+".png")
+    plt.savefig(filename2 + ".png")
     plt.close()
     f = open(filename2 + ".txt", 'w')
     for i in range(len(thetas)):
